@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Techfest XXX — The Codex</title>
+  <meta name="description" content="A landing page concept for Techfest, IIT Bombay — the 30th edition of Asia's largest science and technology festival." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='none' stroke='%23ffd23f' stroke-width='2'/><text x='16' y='21' font-size='13' text-anchor='middle' fill='%23ffd23f' font-family='serif' font-weight='700'>XXX</text></svg>" />
+</head>
+<body>
+  <a class="skip" href="#arenas">Skip to competitions</a>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#top" class="wordmark" aria-label="Techfest home"><span class="wordmark__ring">XXX</span><span>TECHFEST</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#arenas">Competitions</a>
+      <a href="#zonals">Zonals</a>
+      <a href="#guild">Workshops</a>
+      <a href="#ignite">Ignite</a>
+      <a href="#stay">Stay</a>
+    </nav>
+    <a class="btn btn--sm nav__cta" href="https://techfest.org/competitions">Register</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="sky" aria-hidden="true"></div>
+      <div class="sun" aria-hidden="true" data-par="0.15"></div>
+      <svg class="islands islands--far" id="islandsFar" aria-hidden="true" data-par="0.25"></svg>
+      <div class="astro-wrap" aria-hidden="true">
+        <svg class="astro" id="astro" viewBox="-300 -300 600 600">
+          <defs>
+            <path id="ringText" d="M0,-232 a232,232 0 1,1 -0.1,0" />
+            <path id="ringText2" d="M0,-176 a176,176 0 1,0 0.1,0" />
+          </defs>
+          <circle r="280" class="a-line a-faint" />
+          <g class="a-ticks" id="ticks"></g>
+          <circle r="250" class="a-line" />
+          <g class="a-spin a-spin--1">
+            <text class="a-text"><textPath href="#ringText" startOffset="0">✦ ASIA'S LARGEST SCIENCE AND TECHNOLOGY FESTIVAL ✦ IIT BOMBAY ✦ EDITION XXX ✦ MMXXVI </textPath></text>
+          </g>
+          <circle r="214" class="a-line a-faint" />
+          <g class="a-spin a-spin--2">
+            <text class="a-text a-text--sm"><textPath href="#ringText2">COMPETITIONS · WORKSHOPS · LECTURES · EXHIBITIONS · ROBOWARS · OZONE · TECHNOHOLIX · IGNITE · </textPath></text>
+          </g>
+          <circle r="160" class="a-line" />
+          <g class="a-spin a-spin--3" id="glyphs"></g>
+          <circle r="96" class="a-line a-faint" />
+          <g class="a-spin a-spin--1"><path class="a-line" d="M0,-150 L0,150 M-150,0 L150,0 M-106,-106 L106,106 M106,-106 L-106,106" /></g>
+          <circle r="6" class="a-core" />
+        </svg>
+      </div>
+      <svg class="islands islands--near" id="islandsNear" aria-hidden="true" data-par="0.45"></svg>
+      <div class="clouds" aria-hidden="true" data-par="0.6"><i></i><i></i><i></i><i></i><i></i></div>
+
+      <div class="hero__copy">
+        <p class="hero__edition reveal">The 30th Edition · IIT Bombay</p>
+        <h1 class="hero__title" aria-label="Techfest">
+          <span class="hero__word" data-split>TECHFEST</span>
+        </h1>
+        <p class="hero__tag reveal">Asia's Largest Science &amp; Technology Festival</p>
+        <div class="hero__cta reveal">
+          <a class="btn magnetic" href="#arenas">Enter the Arenas</a>
+          <a class="btn btn--ghost magnetic" href="#stay">Book your stay</a>
+        </div>
+        <div class="hero__count reveal" aria-live="off">
+          <span class="hero__count-label">Campus gates open · 15 Dec, 06:00 IST</span>
+          <div class="count" id="count">
+            <div><b data-c="d">00</b><span>Days</span></div>
+            <div><b data-c="h">00</b><span>Hrs</span></div>
+            <div><b data-c="m">00</b><span>Min</span></div>
+            <div><b data-c="s">00</b><span>Sec</span></div>
+          </div>
+        </div>
+      </div>
+      <a href="#numbers" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Competitions</span><i>✦</i><span>Workshops</span><i>✦</i><span>Lectures</span><i>✦</i><span>Exhibitions</span><i>✦</i><span>Robowars</span><i>✦</i><span>Ozone</span><i>✦</i><span>Technoholix</span><i>✦</i><span>Ignite</span><i>✦</i><span>Zonals</span><i>✦</i>
+        <span>Competitions</span><i>✦</i><span>Workshops</span><i>✦</i><span>Lectures</span><i>✦</i><span>Exhibitions</span><i>✦</i><span>Robowars</span><i>✦</i><span>Ozone</span><i>✦</i><span>Technoholix</span><i>✦</i><span>Ignite</span><i>✦</i><span>Zonals</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- NUMBERS -->
+    <section class="sec numbers" id="numbers">
+      <header class="sec__head reveal">
+        <p class="kicker">Chapter I · The Legend</p>
+        <h2>Thirty editions.<br />One campus. Every discipline.</h2>
+        <p class="lede">For three decades, IIT Bombay's Techfest has gathered builders, researchers and dreamers from across India and beyond. Edition XXX is the biggest chapter yet.</p>
+      </header>
+      <div class="stats">
+        <div class="stat reveal"><b><span data-count="30">0</span><sup>th</sup></b><span>edition of Techfest</span></div>
+        <div class="stat reveal"><b><span data-count="28">0</span></b><span>national competitions, <em id="openCount">11</em> open now</span></div>
+        <div class="stat reveal"><b>₹<span data-count="41">0</span>L+</b><span>in prize pools, plus up to ₹25.5 L in the Pushpak Grand Challenge</span></div>
+        <div class="stat reveal"><b><span data-count="17">0</span></b><span>zonal cities, from Kochi to Dhaka</span></div>
+        <div class="stat reveal"><b><span data-count="32">0</span></b><span>workshops &amp; combos with IIT Bombay certificates</span></div>
+      </div>
+    </section>
+
+    <!-- ARENAS (competitions) -->
+    <section class="sec arenas" id="arenas">
+      <header class="sec__head reveal">
+        <p class="kicker">Chapter II · The Arenas</p>
+        <h2>Choose your trial.</h2>
+        <p class="lede">From agentic-AI hackathons to spherical robots and drone swarms. Filter the arenas and claim your place.</p>
+      </header>
+      <div class="filters reveal" role="tablist" aria-label="Filter competitions" id="filters">
+        <button role="tab" aria-selected="true" data-f="open">Open now <span></span></button>
+        <button role="tab" aria-selected="false" data-f="all">All <span></span></button>
+        <button role="tab" aria-selected="false" data-f="national">National <span></span></button>
+        <button role="tab" aria-selected="false" data-f="pushpak">Pushpak <span></span></button>
+        <button role="tab" aria-selected="false" data-f="ideates">Ideates <span></span></button>
+        <button role="tab" aria-selected="false" data-f="zonals">Zonals <span></span></button>
+      </div>
+      <div class="cards" id="cards" aria-live="polite"></div>
+      <div class="more reveal"><a class="btn btn--ghost" href="https://techfest.org/competitions">See full rules on techfest.org →</a></div>
+    </section>
+
+    <!-- PUSHPAK SPOTLIGHT -->
+    <section class="spotlight reveal" aria-labelledby="pushpakTitle">
+      <div class="spotlight__inner">
+        <svg class="swarm" viewBox="0 0 400 220" aria-hidden="true" id="swarm"></svg>
+        <div>
+          <p class="kicker">Spotlight · MeitY-funded</p>
+          <h2 id="pushpakTitle">Pushpak Grand Challenge 2026</h2>
+          <p>Three deep-tech tracks: resilient BVLOS drone swarms, cycloidal-rotor propulsion and drone security. Teams go from concept to field-ready design under expert mentorship, with staged funding along the way.</p>
+          <p class="spotlight__prize">Up to <b>₹25,50,000</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONALS -->
+    <section class="sec zonals" id="zonals">
+      <header class="sec__head reveal">
+        <p class="kicker">Chapter III · The Pilgrimage</p>
+        <h2>Techfest comes to your city.</h2>
+        <p class="lede">Zonal rounds of SparkX, ThetaShift, RoboReach, Meshmerize, ZeroCode and InnovateX travel across 17 cities before the grand finale at IIT Bombay.</p>
+      </header>
+      <div class="route reveal">
+        <div class="route__next" id="routeNext"></div>
+        <ol class="route__list" id="routeList"></ol>
+      </div>
+    </section>
+
+    <!-- GUILD (workshops) -->
+    <section class="sec guild" id="guild">
+      <header class="sec__head reveal">
+        <p class="kicker">Chapter IV · The Guild</p>
+        <h2>Learn the craft from the masters.</h2>
+        <p class="lede">Hands-on workshops on campus with an IIT Bombay professional certificate, free access to every Techfest event, and internship opportunities.</p>
+      </header>
+      <div class="tabs reveal" role="tablist" aria-label="Workshop categories" id="wsTabs">
+        <button role="tab" aria-selected="true" data-c="combo">Combos</button>
+        <button role="tab" aria-selected="false" data-c="ai">AI &amp; Data</button>
+        <button role="tab" aria-selected="false" data-c="tech">Tech &amp; Cyber</button>
+        <button role="tab" aria-selected="false" data-c="biz">Business &amp; Finance</button>
+        <button role="tab" aria-selected="false" data-c="design">Design</button>
+        <button role="tab" aria-selected="false" data-c="eng">Engineering &amp; Robotics</button>
+      </div>
+      <div class="scrolls" id="scrolls"></div>
+      <p class="festive reveal"><span>✦ Festive discount live</span> Prices shown are the current offer prices on techfest.org.</p>
+    </section>
+
+    <!-- IGNITE -->
+    <section class="sec ignite" id="ignite">
+      <header class="sec__head reveal">
+        <p class="kicker kicker--fire">Chapter V · Ignite</p>
+        <h2>Light a Techfest flame on your campus.</h2>
+        <p class="lede">Ignite accredits student-led technical bodies across India. Your team runs its own campus initiatives, backed by Asia's largest science &amp; tech festival. It's <b>100% free</b> to join.</p>
+      </header>
+      <div class="tracks">
+        <article class="track reveal">
+          <p class="track__no">Track 1</p>
+          <h3>Catalyst</h3>
+          <p class="track__for">For new or growing tech clubs and first-time fests.</p>
+          <ul>
+            <li>Official accreditation &amp; co-branded alliance tags</li>
+            <li>Direct mentorship from a Techfest core-team contact</li>
+            <li>National Leadership Summit invitation</li>
+            <li>VIP access to exhibitions, keynotes &amp; Robowars</li>
+          </ul>
+          <div class="grant">
+            <p>₹1,00,000 national seed grant pool</p>
+            <div class="grant__bars">
+              <div style="--h:100%"><b>₹50K</b><span>Rank 1</span></div>
+              <div style="--h:60%"><b>₹30K</b><span>Rank 2</span></div>
+              <div style="--h:40%"><b>₹20K</b><span>Rank 3</span></div>
+            </div>
+          </div>
+        </article>
+        <article class="track track--vanguard reveal">
+          <p class="track__no">Track 2</p>
+          <h3>Vanguard</h3>
+          <p class="track__for">For established fests with 3+ years of history.</p>
+          <ul>
+            <li>"Under the Patronage of Techfest, IIT Bombay" branding</li>
+            <li>Keynote &amp; advisory roles at the Leadership Summit</li>
+            <li>Your own showcase in the Ignite Pavilion at TechExpo</li>
+            <li>Convocation Hall VIP delegation</li>
+            <li>National Institutional Excellence Awards</li>
+          </ul>
+          <a class="btn btn--fire" href="https://techfest.org/ignite">Apply to Ignite</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- STAY -->
+    <section class="sec stay" id="stay">
+      <div class="stay__card reveal">
+        <div class="stay__copy">
+          <p class="kicker">Chapter VI · The Sanctuary</p>
+          <h2>Sleep inside the citadel.</h2>
+          <p class="lede">Four days and four nights inside the IIT Bombay campus, with free access to every Techfest event.</p>
+          <ul class="stay__facts">
+            <li><span>Check-in</span><b>15 Dec · 06:00</b></li>
+            <li><span>Check-out</span><b>19 Dec · 10:00</b></li>
+            <li><span>Groups of 5+</span><b>Flat ₹150 off</b></li>
+            <li><span>Groups of 13+</span><b>Flat ₹300 off</b></li>
+          </ul>
+        </div>
+        <div class="stay__price">
+          <p class="stay__was">₹4,499</p>
+          <p class="stay__now">₹3,599</p>
+          <p class="stay__per">per person · 4D / 4N</p>
+          <a class="btn magnetic" href="https://techfest.org/accommodation">Book your stay</a>
+          <p class="stay__note">Rooms are first come, first served.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CA -->
+    <section class="finale">
+      <div class="finale__sky" aria-hidden="true"></div>
+      <svg class="finale__islands" id="islandsEnd" aria-hidden="true"></svg>
+      <div class="ca reveal">
+        <p class="kicker">The Envoys</p>
+        <h2>Become a College Ambassador.</h2>
+        <p>Represent Techfest at your college. Get exclusive perks and certificates.</p>
+        <a class="btn magnetic" href="https://ca.techfest.org">Join the CA Program</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__top">
+      <div class="wordmark wordmark--lg"><span class="wordmark__ring">XXX</span><span>TECHFEST</span></div>
+      <nav class="socials" aria-label="Techfest on social media">
+        <a href="https://www.instagram.com/techfest_iitbombay/">Instagram</a>
+        <a href="https://x.com/Techfest_IITB">X</a>
+        <a href="https://in.linkedin.com/company/techfest">LinkedIn</a>
+        <a href="https://www.facebook.com/iitbombaytechfest/">Facebook</a>
+        <a href="https://www.youtube.com/user/techfestiitbombay">YouTube</a>
+        <a href="https://discord.gg/XfzAud8MNk">Discord</a>
+      </nav>
+    </div>
+    <p class="foot__note">Landing page design concept by Varad Gangurde. This is not the official Techfest website. Event details were taken from <a href="https://techfest.org">techfest.org</a> in November 2026; always check there for the latest information.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
